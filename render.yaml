@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bytecode-vm-evaluator
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true

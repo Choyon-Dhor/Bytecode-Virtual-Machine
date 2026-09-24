@@ -1,0 +1,12 @@
+services:
+  evaluator-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bytecode-vm-evaluator:latest
+    container_name: bytecode_vm_evaluator
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    restart: unless-stopped
